@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Sanjibani ♥</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+      color: #4a235a;
+      text-align: center;
+      position: relative;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      max-width: 450px;
+      z-index: 10;
+      position: relative;
+      backdrop-filter: blur(3px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.2em;
+      margin-bottom: 0.3em;
+      color: #c2185b;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .heart {
+      color: #e91e63;
+      font-size: 4em;
+      animation: heartbeat 1.8s infinite;
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(233,30,99,0.3);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 1.5em 0 2em;
+      line-height: 1.7;
+      color: #5d3a66;
+      font-weight: 400;
+    }
+
+    button {
+      background: #c2185b;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(194, 24, 91, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: #ad1457;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(194, 24, 91, 0.5);
+    }
+
+    /* Surprise message style */
+    #surpriseMessage {
+      display: none;
+      font-size: 1.1em;
+      color: #c2185b;
+      margin-top: 25px;
+      font-weight: 500;
+      line-height: 1.7;
+      animation: fadeIn 2s forwards;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts animation */
+    .floating-heart {
+      position: absolute;
+      font-size: 20px;
+      color: #e91e63;
+      animation: floatUp 8s linear infinite;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.8;
+      text-shadow: 0 0 5px rgba(233,30,99,0.3);
+      z-index: 5;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.8) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Cat animation styles - IMPROVED TO FLY ABOVE TEXT */
+    .cat {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      pointer-events: none;
+      z-index: 20; /* Higher z-index to ensure cats fly above text */
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+      opacity: 0.9;
+    }
+
+    /* Different cat animations with improved flight paths */
+    .cat-float1 {
+      animation: flyAcross1 12s linear infinite;
+      background-image: url('https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif');
+    }
+
+    .cat-float2 {
+      animation: flyAcross2 15s linear infinite;
+      background-image: url('https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif');
+    }
+
+    .cat-float3 {
+      animation: flyAcross3 18s linear infinite;
+      background-image: url('https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif');
+    }
+
+    /* Keyframes for cats flying above text from side to side */
+    @keyframes flyAcross1 {
+      0% {
+        left: -100px;
+        top: 20%;
+        transform: rotate(-5deg) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        left: calc(100% + 100px);
+        top: 25%;
+        transform: rotate(5deg) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyAcross2 {
+      0% {
+        left: calc(100% + 100px);
+        top: 35%;
+        transform: rotate(5deg) scale(0.7);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        left: -100px;
+        top: 40%;
+        transform: rotate(-5deg) scale(0.7);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyAcross3 {
+      0% {
+        left: -100px;
+        top: 10%;
+        transform: rotate(-8deg) scale(0.6);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      50% {
+        top: 15%;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        left: calc(100% + 100px);
+        top: 10%;
+        transform: rotate(8deg) scale(0.6);
+        opacity: 0;
+      }
+    }
+
+    /* Special diagonal flying cats */
+    .cat-float4 {
+      animation: flyDiagonal1 20s linear infinite;
+      background-image: url('https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif');
+    }
+
+    .cat-float5 {
+      animation: flyDiagonal2 17s linear infinite;
+      background-image: url('https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif');
+    }
+
+    @keyframes flyDiagonal1 {
+      0% {
+        left: -100px;
+        top: 60%;
+        transform: rotate(-15deg) scale(0.7);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        left: calc(100% + 100px);
+        top: 10%;
+        transform: rotate(15deg) scale(0.7);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyDiagonal2 {
+      0% {
+        left: calc(100% + 100px);
+        top: 70%;
+        transform: rotate(15deg) scale(0.65);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        left: -100px;
+        top: 20%;
+        transform: rotate(-15deg) scale(0.65);
+        opacity: 0;
+      }
+    }
+
+    /* Special corner cat */
+    .corner-cat {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -20px;
+      bottom: -20px;
+      background-image: url('https://media.giphy.com/media/3o7abAHdYvZdBNnGZq/giphy.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: cornerCat 10s infinite ease-in-out;
+      z-index: 20;
+      transform-origin: center;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.2));
+    }
+
+    @keyframes cornerCat {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(0.8);
+      }
+      25% {
+        transform: translate(-15px, -15px) rotate(3deg) scale(0.85);
+      }
+      50% {
+        transform: translate(-30px, -30px) rotate(0deg) scale(0.9);
+      }
+      75% {
+        transform: translate(-15px, -15px) rotate(-3deg) scale(0.85);
+      }
+    }
+
+    /* Floating petals */
+    .petal {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    @keyframes floatPetal {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Dearest Sanjibani</h1>
+    <div class="heart">♥</div>
+    <p>In a world of endless possibilities, finding you was the most beautiful stroke of serendipity. Your presence makes ordinary moments extraordinary.</p>
+    <button onclick="showSurprise()">A Message From My Heart</button>
+    <div id="surpriseMessage">
+      What I feel for you cannot be contained in words alone. It's in the quiet moments when I catch myself smiling at the thought of you, in the way my heart still skips a beat when you enter the room. You've become my favorite part of every day, and for that, I am endlessly grateful.
+    </div>
+  </div>
+
+  <!-- Special corner cat -->
+  <div class="corner-cat"></div>
+
+  <!-- Fixed initial cats (always visible flying above text) -->
+  <div class="cat cat-float1" style="animation-delay: 0s;"></div>
+  <div class="cat cat-float2" style="animation-delay: 3s;"></div>
+  <div class="cat cat-float3" style="animation-delay: 6s;"></div>
+  <div class="cat cat-float4" style="animation-delay: 2s;"></div>
+  <div class="cat cat-float5" style="animation-delay: 8s;"></div>
+
+  <script>
+    function showSurprise() {
+      const msg = document.getElementById('surpriseMessage');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+      
+      // Create extra hearts when button is clicked
+      for (let i = 0; i < 10; i++) {
+        setTimeout(createHeart, i * 150);
+      }
+      
+      // Create extra cats when button is clicked
+      for (let i = 0; i < 3; i++) {
+        setTimeout(createRandomCat, i * 300);
+      }
+    }
+
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+      heart.style.fontSize = (18 + Math.random() * 12) + 'px';
+      heart.textContent = Math.random() > 0.5 ? '♥' : '❀';
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    // Create random flying cats
+    function createRandomCat() {
+      const cat = document.createElement('div');
+      const catTypes = ['cat-float1', 'cat-float2', 'cat-float3', 'cat-float4', 'cat-float5'];
+      const randomType = catTypes[Math.floor(Math.random() * catTypes.length)];
+      
+      cat.className = `cat ${randomType}`;
+      
+      // Random delay for more natural movement
+      cat.style.animationDelay = (Math.random() * 2) + 's';
+      
+      document.body.appendChild(cat);
+      
+      // Remove cat after animation completes
+      setTimeout(() => {
+        cat.remove();
+      }, 25000);
+    }
+
+    // Create additional flying cats periodically
+    function createExtraCat() {
+      const cat = document.createElement('div');
+      const catTypes = ['cat-float1', 'cat-float2', 'cat-float3', 'cat-float4', 'cat-float5'];
+      const randomType = catTypes[Math.floor(Math.random() * catTypes.length)];
+      
+      cat.className = `cat ${randomType}`;
+      
+      document.body.appendChild(cat);
+      
+      // Remove cat after animation completes
+      setTimeout(() => {
+        cat.remove();
+      }, 25000);
+    }
+
+    // Create initial elements
+    setInterval(createHeart, 800);
+    setInterval(createExtraCat, 3000);
+    
+    // Create initial hearts
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createHeart, i * 300);
+    }
+  </script>
+</body>
+</html>
